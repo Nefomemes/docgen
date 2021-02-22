@@ -17,26 +17,30 @@ class DocumentedClass extends DocumentedItem {
 	}
 
 	add(item) {
-		console.log(item)
+		
 		if(item instanceof DocumentedConstructor) {
-			if(this.construct) throw new Error(`Doc ${this.directData.name} already has constructor`);
-			this.construct = item;
+			if(this.construct) { console.warn(`Doc ${this.directData.name} already has constructor`);
+			} else {
+			this.construct = item;}
 		} else if(item instanceof DocumentedFunction) {
 			const prefix = item.directData.scope === 'static' ? 's-' : '';
 			if(this.methods.has(prefix + item.directData.name)) {
-				throw new Error(`Doc ${this.directData.name} already has method ${item.directData.name}`);
-			}
+				 console.warn(`Doc ${this.directData.name} already has method ${item.directData.name}`);
+			} else {
 			this.methods.set(prefix + item.directData.name, item);
+			}
 		} else if(item instanceof DocumentedMember) {
 			if(this.props.has(item.directData.name)) {
-				throw new Error(`Doc ${this.directData.name} already has prop ${item.directData.name}`);
-			}
+			 console.warn(`Doc ${this.directData.name} already has prop ${item.directData.name}`);
+			} else {
 			this.props.set(item.directData.name, item);
+			}
 		} else if(item instanceof DocumentedEvent) {
 			if(this.events.has(item.directData.name)) {
-				throw new Error(`Doc ${this.directData.name} already has event ${item.directData.name}`);
-			}
+				console.warn(`Doc ${this.directData.name} already has event ${item.directData.name}`);
+			} else {
 			this.events.set(item.directData.name, item);
+			}
 		}
 	}
 
