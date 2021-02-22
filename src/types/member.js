@@ -7,9 +7,9 @@ class DocumentedMember extends DocumentedItem {
 	registerMetaInfo(data) {
 		data.meta = new DocumentedItemMeta(this, data.meta);
 		
-		if(data.type){
+		console.log(data)
 		data.type = new DocumentedVarType(this, data.type);
-		}
+		
 		if(data.properties) {
 			if(data.properties.length > 0) {
 				for(let i = 0; i < data.properties.length; i++) {
