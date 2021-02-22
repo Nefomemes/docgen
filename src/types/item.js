@@ -7,6 +7,8 @@ class DocumentedItem {
 			this.registerMetaInfo(info);
 		} catch(err) {
 			err.message = `Error while loading ${this.detailedName(info)}: ${err.message}`;
+			
+			console.error(err);
 			throw err;
 		}
 	}
