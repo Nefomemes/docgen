@@ -10,7 +10,7 @@ if(!info) throw Error("Info is not specified");
 		} catch(err) {
 			err.message = `Error while loading ${this.detailedName(info)}: ${err.message}`;
 			
-			console.error(err);
+			
 			throw err;
 		}
 	}
@@ -20,7 +20,7 @@ if(!info) throw Error("Info is not specified");
 			return this.serializer();
 		} catch(err) {
 			err.message = `Error while serializing ${this.detailedName(this.directData)}: ${err.message}`;
-			console.error(err);
+
 			throw err;
 		}
 	}
