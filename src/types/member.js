@@ -7,7 +7,7 @@ class DocumentedMember extends DocumentedItem {
 	registerMetaInfo(data) {
 		data.meta = new DocumentedItemMeta(this, data.meta);
 		
-		console.log(data)
+		
 		data.type = new DocumentedVarType(this, data.type);
 		
 		if(data.properties) {
@@ -35,8 +35,7 @@ class DocumentedMember extends DocumentedItem {
 			abstract: this.directData.virtual,
 			deprecated: this.directData.deprecated,
 			default: this.directData.default,
-			type: this.directData.type.serialize(),
-			props: this.directData.properties ? this.directData.properties.map(p => p.serialize()) : undefined,
+			type: this.directData.type.directData ? this.directData.type.serialize() : null,			props: this.directData.properties ? this.directData.properties.map(p => p.serialize()) : undefined,
 			meta: this.directData.meta.serialize()
 		};
 	}
