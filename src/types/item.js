@@ -18,6 +18,7 @@ class DocumentedItem {
 			return this.serializer();
 		} catch(err) {
 			err.message = `Error while serializing ${this.detailedName(this.directData)}: ${err.message}`;
+			console.error(err);
 			throw err;
 		}
 	}
