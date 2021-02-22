@@ -2,7 +2,7 @@ class DocumentedItem {
 	constructor(parent, info) {
 		this.parent = parent;
 		this.directData = null;
-if(!info) console.warn(`Info is not specified`, parent);
+if(!info) console.warn(`Info is not specified `)
 		try {
 			if(info){			this.registerMetaInfo(info);
 			}

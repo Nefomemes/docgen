@@ -33,8 +33,9 @@ class DocumentedClass extends DocumentedItem {
 			
 			
 			if(this.props.has(item.directData.name)) {
-			 console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}`);
-			 console.log(item)
+				
+			 console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}`, item.directData);
+			
 			} else {
 					this.props.set(item.directData.name, item);
 					
