@@ -4,6 +4,8 @@ class DocumentedVarType extends DocumentedItem {
 	registerMetaInfo(data) {
 		console.log(data);
 		this.directData = data;
+		
+		if(data) console.error("Data not found")
 	}
 
 	serializer() {
