@@ -17,6 +17,7 @@ class DocumentedClass extends DocumentedItem {
 	}
 
 	add(item) {
+		console.log(item)
 		if(item instanceof DocumentedConstructor) {
 			if(this.construct) throw new Error(`Doc ${this.directData.name} already has constructor`);
 			this.construct = item;

@@ -60,7 +60,7 @@ class Documentation {
 
 	parse(items) {
 		this.registerRoots(items);
-console.log(items)
+
 		for(const member of items) {
 			
 			if(!member){
