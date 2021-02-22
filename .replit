@@ -1,2 +1,2 @@
 language = "nodejs"
-run = "npm start"
+run = "cd ./battlelog.js/ && npm install && npm run docs:test"
