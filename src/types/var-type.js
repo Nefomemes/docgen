@@ -5,12 +5,11 @@ class DocumentedVarType extends DocumentedItem {
 		
 		this.directData = data;
 		
-		if(!data) console.error("Data not found")
 	}
 
 	serializer() {
 		const names = [];
-		
+		console.log(this);
 		for(const name of this.directData.names) names.push(this.constructor.splitVarName(name));
 		if(!this.directData.description && !this.directData.nullable) return names;
 		return {
