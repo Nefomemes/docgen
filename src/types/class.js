@@ -24,11 +24,9 @@ class DocumentedClass extends DocumentedItem {
 			this.construct = item;}
 		} else if(item instanceof DocumentedFunction) {
 			const prefix = item.directData.scope === 'static' ? 's-' : '';
-			if(this.methods.has(prefix + item.directData.name)) {
-				 console.warn(`- Doc ${this.directData.name} already has method ${item.directData.name}`);
-			} else {
+			if(this.methods.has(prefix + item.directData.name)) console.warn(`- Doc ${this.directData.name} already has method ${item.directData.name}. Overwriting...`);
 			this.methods.set(prefix + item.directData.name, item);
-			}
+			
 		} else if(item instanceof DocumentedMember) {
 			
 			
