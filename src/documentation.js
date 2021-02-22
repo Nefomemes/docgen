@@ -62,7 +62,14 @@ class Documentation {
 		this.registerRoots(items);
 
 		for(const member of items) {
+			
+			if(!member){
+				console.warn(member);
+				console.warn(`member doesn't exist!`);
+			} else {
+			
 			let item;
+			
 			if(this.childTypes[member.kind]) item = new this.childTypes[member.kind](this, member);
 			else console.warn(`- Unknown documentation kind "${member.kind}" - \n${JSON.stringify(member)}\n`);
 
@@ -88,6 +95,7 @@ class Documentation {
 			info = info.length > 0 ? ` (${info.join(', ')})` : '';
 			console.warn(`- "${name}"${info} has no accessible parent.`);
 			if(!name && info.length === 0) console.warn('Raw object:', member);
+			}
 		}
 	}
 
