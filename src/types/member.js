@@ -6,7 +6,9 @@ const DocumentedParam = require('./param');
 class DocumentedMember extends DocumentedItem {
 	registerMetaInfo(data) {
 		data.meta = new DocumentedItemMeta(this, data.meta);
+
 		data.type = new DocumentedVarType(this, data.type);
+		
 		if(data.properties) {
 			if(data.properties.length > 0) {
 				for(let i = 0; i < data.properties.length; i++) {
@@ -20,7 +22,7 @@ class DocumentedMember extends DocumentedItem {
 	}
 
 	serializer() {
-		console.log(this)
+		
 		return {
 			name: this.directData.name,
 			description: this.directData.description,
