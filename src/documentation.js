@@ -71,7 +71,7 @@ class Documentation {
 			let item;
 			
 			if(this.childTypes[member.kind]) item = new this.childTypes[member.kind](this, member);
-			else console.warn(`- Unknown documentation kind "${member.kind}" - \n${JSON.stringify(member)}\n`);
+			else console.warn(`- Unknown documentation kind "${(member || {}).kind}" - \n${JSON.stringify(member)}\n`);
 
 			const parent = this.findParent(member);
 			if(parent) {
