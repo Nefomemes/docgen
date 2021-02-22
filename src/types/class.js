@@ -36,6 +36,10 @@ class DocumentedClass extends DocumentedItem {
 			 console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}`);
 			} else {
 					this.props.set(item.directData.name, item);
+					
+					if(this.directData.name === "User"){
+						console.log(this, item)
+					}
 			}
 		} else if(item instanceof DocumentedEvent) {
 			if(this.events.has(item.directData.name)) {
@@ -86,3 +90,4 @@ class DocumentedClass extends DocumentedItem {
 */
 
 module.exports = DocumentedClass;
+a
