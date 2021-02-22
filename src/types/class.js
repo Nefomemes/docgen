@@ -32,14 +32,11 @@ class DocumentedClass extends DocumentedItem {
 		} else if(item instanceof DocumentedMember) {
 			
 			
-			if(this.props.has(item.directData.name)) {
-				
-			 console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}`, item.directData);
-			
-			} else {
+			if(this.props.has(item.directData.name)) console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}. Overwriting...`);
+			 
 					this.props.set(item.directData.name, item);
 					
-			}
+			
 		} else if(item instanceof DocumentedEvent) {
 			if(this.events.has(item.directData.name)) {
 				console.warn(`- Doc ${this.directData.name} already has event ${item.directData.name}`);
