@@ -88,4 +88,3 @@ class DocumentedClass extends DocumentedItem {
 */
 
 module.exports = DocumentedClass;
-a
