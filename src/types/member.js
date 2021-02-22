@@ -20,6 +20,7 @@ class DocumentedMember extends DocumentedItem {
 	}
 
 	serializer() {
+		console.log(this)
 		return {
 			name: this.directData.name,
 			description: this.directData.description,

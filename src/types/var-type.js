@@ -9,7 +9,6 @@ class DocumentedVarType extends DocumentedItem {
 
 	serializer() {
 		const names = [];
-		console.log(this);
 		for(const name of this.directData.names) names.push(this.constructor.splitVarName(name));
 		if(!this.directData.description && !this.directData.nullable) return names;
 		return {
