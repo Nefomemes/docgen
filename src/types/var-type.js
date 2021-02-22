@@ -2,14 +2,13 @@ const DocumentedItem = require('./item');
 
 class DocumentedVarType extends DocumentedItem {
 	registerMetaInfo(data) {
-		
+		console.log(data);
 		this.directData = data;
 	}
 
 	serializer() {
 		const names = [];
-		console.log(this.directData);
-		console.log(this.directData);
+		
 		for(const name of this.directData.names) names.push(this.constructor.splitVarName(name));
 		if(!this.directData.description && !this.directData.nullable) return names;
 		return {
