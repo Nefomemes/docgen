@@ -35,7 +35,7 @@ class DocumentedClass extends DocumentedItem {
 			if(this.props.has(item.directData.name)) {
 			 console.warn(`- Doc ${this.directData.name} already has prop ${item.directData.name}`);
 			} else {
-				console.log(item);			this.props.set(item.directData.name, item);
+					this.props.set(item.directData.name, item);
 			}
 		} else if(item instanceof DocumentedEvent) {
 			if(this.events.has(item.directData.name)) {
