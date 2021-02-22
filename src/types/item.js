@@ -2,10 +2,10 @@ class DocumentedItem {
 	constructor(parent, info) {
 		this.parent = parent;
 		this.directData = null;
-if(!info) throw Error("Info is not specified");
+if(!info) console.warn(`Info is not specified`, parent);
 		try {
-			
-			this.registerMetaInfo(info);
+			if(info){			this.registerMetaInfo(info);
+			}
 			
 		} catch(err) {
 			err.message = `Error while loading ${this.detailedName(info)}: ${err.message}`;
