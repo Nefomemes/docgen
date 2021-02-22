@@ -4,8 +4,8 @@ class DocumentedItem {
 		this.directData = null;
 if(!info) console.warn(`Info is not specified `)
 		try {
-			if(info){			this.registerMetaInfo(info);
-			}
+			this.registerMetaInfo(info);
+		
 			
 		} catch(err) {
 			err.message = `Error while loading ${this.detailedName(info)}: ${err.message}`;
