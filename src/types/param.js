@@ -3,6 +3,10 @@ const DocumentedVarType = require('./var-type');
 
 class DocumentedParam extends DocumentedItem {
 	registerMetaInfo(data) {
+		console.log(data)
+		
+		
+		
 		data.type = new DocumentedVarType(this, data.type);
 		
 		this.directData = data;
