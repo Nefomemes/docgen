@@ -69,7 +69,11 @@ class Documentation {
 			} else {
 			
 			let item;
+			const name = member.name || (member.directData ? member.directData.name : 'UNKNOWN');
 			
+			if(name === "gravatarEmailHash"){
+				console.log(member)
+			}
 			if(this.childTypes[member.kind]) item = new this.childTypes[member.kind](this, member);
 			else console.warn(`- Unknown documentation kind "${(member || {}).kind}" - \n${JSON.stringify(member)}\n`);
 
@@ -79,7 +83,7 @@ class Documentation {
 				continue;
 			}
 
-			const name = member.name || (member.directData ? member.directData.name : 'UNKNOWN');
+			
 			let info = [];
 
 			const memberof = member.memberof || (member.directData ? member.directData.memberof : null);

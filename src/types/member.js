@@ -8,7 +8,7 @@ class DocumentedMember extends DocumentedItem {
 		data.meta = new DocumentedItemMeta(this, data.meta);
 		
 		
-		data.type = new DocumentedVarType(this, data.type || {names: []});
+		data.type = new DocumentedVarType(this, data.type);
 		
 		if(data.properties) {
 			if(data.properties.length > 0) {

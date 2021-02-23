@@ -15,14 +15,12 @@ if(!info) console.warn(`Info is not specified `)
 		}
 	}
 
-	serialize() {
+l	serialize() {
 		try {
 			return this.serializer();
 		} catch(err) {
 			err.message = `Error while serializing ${this.detailedName(this.directData)}: ${err.message}`
-	
-	console.error(err);
-	return null
+	throw err
 		}
 	}
 
