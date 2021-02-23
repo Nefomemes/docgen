@@ -15,7 +15,7 @@ if(!info) console.warn(`Info is not specified `)
 		}
 	}
 
-l	serialize() {
+	serialize() {
 		try {
 			return this.serializer();
 		} catch(err) {
