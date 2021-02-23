@@ -3,6 +3,14 @@ const DocumentedParam = require('./param');
 
 class DocumentedConstructor extends DocumentedItem {
 	registerMetaInfo(data) {
+		if(data.name === "BattlelogClient"){
+			console.log(data);
+			console.log(data.params);
+			for (let param of data.params){
+				console.log(param);
+				console.log(param.type)
+			}
+		}
 		if(data.params) {
 			if(data.params.length > 0) {
 				for(let i = 0; i < data.params.length; i++) data.params[i] = new DocumentedParam(this, data.params[i]);

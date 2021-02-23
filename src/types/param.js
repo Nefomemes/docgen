@@ -4,7 +4,9 @@ const DocumentedVarType = require('./var-type');
 class DocumentedParam extends DocumentedItem {
 	registerMetaInfo(data) {
 		data.type = new DocumentedVarType(this, data.type);
+		
 		this.directData = data;
+		
 	}
 
 	serializer() {
