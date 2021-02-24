@@ -3,7 +3,7 @@ const DocumentedVarType = require('./var-type');
 
 class DocumentedParam extends DocumentedItem {
 	registerMetaInfo(data) {
-		console.log(data)
+	
 		
 		
 	
