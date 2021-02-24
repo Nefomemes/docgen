@@ -3,3 +3,9 @@ This is the application that generates the `docs.json` files for [discord.js](ht
 [discord.js-commando](https://github.com/discordjs/Commando). It parses all JSDocs in any given directories, and outputs
 a single JSON file with data about all classes, properties, methods, typedefs, etc. It also accepts custom docs files.
 This is handy for documentation websites, so that they can load the data dynamically and display it however they need.
+
+## Troubleshooting
+
+### TypeError: Error while serializing DocumentedVarType: Cannot read property 'names' of undefined
+
+This is caused by a syntax error in one of the comments parsed. Try checking your source code for errors.
