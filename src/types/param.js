@@ -6,7 +6,7 @@ class DocumentedParam extends DocumentedItem {
 		console.log(data)
 		
 		
-		
+		 if(!data.type) console.warn(`data.type not found\n\n$(JSON.stringify(data)}`)
 		data.type = new DocumentedVarType(this, data.type);
 		
 		this.directData = data;
